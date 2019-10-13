@@ -6,6 +6,20 @@ $(function(){
   $("#profile #birthdate").text(user.birthdate);
   $("#profile #faculty").text(user.faculty);
 
+  let courses = [];
+  let course = new Course("Agile software development", "1", 82);
+  courses.push(course);
+  course = new Course("Testing", "2", 90);
+  courses.push(course);
+
+  var i;
+  for (i = 0; i < courses.length; i++) {
+    $("#courses").append("<tr><td>1</td><td>" + courses[i].title +"</td><td>" + courses[i].semester +"</td><td>" + courses[i].grade +"</td></tr>");
+  }
+
+
+  console.log(courses);
+
   $("#profile-button").click(function (){
 
     $("#courses-container").removeClass("active");
@@ -19,6 +33,7 @@ $(function(){
   $("#courses-button").click(function (){
     $("#profile-container").removeClass("active");
     $("#courses-container").addClass("active");
+
 
     $(this).addClass("active");
     $("#profile-button").removeClass("active");
@@ -40,4 +55,3 @@ $(function(){
           }
       );
 });
-
