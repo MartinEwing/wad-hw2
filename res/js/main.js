@@ -95,6 +95,10 @@ $(function(){
           function ()
           {
               courses.push(new Course($("#title").val(),$("#semester").val(),$("#grade").val()));
+              sum = sum + calGrade($("#grade").val());
+              let gpa = sum / courses.length;
+              $("#profile #gpa strong").text(gpa);
+
               $("#courses").append("<tr><td>" + courses.length + "</td><td>" + $("#title").val() +"</td><td>" + $("#semester").val() +"</td><td>" + $("#grade").val() +"</td></tr>");
               clearInput();
           }
