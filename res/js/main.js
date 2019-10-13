@@ -1,5 +1,10 @@
-
 $(function(){
+
+  let user = new User("Bob", "Last", "26.07.1999", "Software Engineering", 0);
+
+  $("#profile #name").text(user.firstname + " " + user.lastname);
+  $("#profile #birthdate").text(user.birthdate);
+  $("#profile #faculty").text(user.faculty);
 
   $("#profile-button").click(function (){
 
