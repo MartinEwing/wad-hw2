@@ -39,5 +39,16 @@ $(function(){
 
           }
       );
+
+  $('#cancel-course')
+      .click(
+          function ()
+          {
+            $("#title").val('');
+            $("#semester").val('');
+            $("#grade").val('');
+            $('#add-course-button').click();
+          }
+      );
 });
 
