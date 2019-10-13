@@ -24,4 +24,20 @@ $(function(){
     $("#profile-button").removeClass("active");
   });
 
+  var hidden = true;
+  $('#add-course-button')
+      .click(
+          function ()
+          {
+            if(hidden){
+              $("#add-course").css("display", "inline");
+              hidden = false;
+            } else{
+              $("#add-course").css("display", "none");
+              hidden = true;
+            }
+
+          }
+      );
 });
+
