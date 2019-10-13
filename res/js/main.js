@@ -58,16 +58,21 @@ $(function(){
           }
       );
 
+  function clearInput() {
+        $("#title").val('');
+        $("#semester").val('');
+        $("#grade").val('');
+    }
+
   $('#cancel-course')
       .click(
           function ()
           {
-            $("#title").val('');
-            $("#semester").val('');
-            $("#grade").val('');
+            clearInput();
             $('#add-course-button').click();
           }
       );
+
   function calGrade(grade) {
     if (grade > 90) {
       return 4;
@@ -84,4 +89,14 @@ $(function(){
     }
 
   }
+
+  $('#save-course')
+      .click(
+          function ()
+          {
+              courses.push(new Course($("#title").val(),$("#semester").val(),$("#grade").val()));
+              $("#courses").append("<tr><td>" + courses.length + "</td><td>" + $("#title").val() +"</td><td>" + $("#semester").val() +"</td><td>" + $("#grade").val() +"</td></tr>");
+              clearInput();
+          }
+      );
 });
